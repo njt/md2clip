@@ -5,7 +5,7 @@ A Claude Code skill that copies Claude's last response to the Windows clipboard 
 ## Install
 
 ```bash
-git clone https://github.com/natfaulk/md2clip.git
+git clone https://github.com/njt/md2clip.git
 cd md2clip
 ./install.sh
 ```
