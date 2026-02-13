@@ -24,6 +24,9 @@ open my $fh, '<:utf8', $input_file or die "Cannot open $input_file: $!\n";
 my $md = do { local $/; <$fh> };
 close $fh;
 
+# Normalize CRLF to LF — Markdown::Perl's table parser chokes on \r before \n.
+$md =~ s/\r\n/\n/g;
+
 # Convert markdown to HTML
 my $parser = Markdown::Perl->new;
 my $html = $parser->convert($md);
